@@ -1,0 +1,13 @@
+server:
+  port: ${csp.service.b.port}
+
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: ${csp.kafka.hostname}
+      bindings:
+        channel-in:
+          destination: ${csp.kafka.topic}
+          contentType: application/json
